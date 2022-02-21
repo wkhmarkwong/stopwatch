@@ -1,9 +1,7 @@
-//update test
-
 function stopWatch() {
   sec += 1;
 
-  //Logic to determine when to increment next value
+  //adjust sec, min, hr
   if (sec / 60 === 1) {
     sec = 0;
     min++;
@@ -33,14 +31,13 @@ function stopWatch() {
     displayHours = hr;
   }
 
-  //Display updated time values to user
+  //Display string
   document.getElementById("display").innerHTML =
     displayHours + ":" + displayMinutes + ":" + displaySeconds;
 }
 
 function startStop() {
   if (watchStatus === "stopped") {
-    //Start the stopwatch (by calling the setInterval() function)
     interval = window.setInterval(stopWatch, 1000);
     document.getElementById("startStop").innerHTML = "Stop";
     watchStatus = "started";
